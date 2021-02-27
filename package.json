@@ -1,0 +1,30 @@
+{
+  "name": "test-project-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ojvar/test-project-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ojvar/test-project-management/issues"
+  },
+  "homepage": "https://github.com/Ojvar/test-project-management#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/vue": "^2.0.0"
+  }
+}

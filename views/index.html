@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <pre>
+                {{ $data }}
+            </pre>
+            <h1>Login to system</h1>
+
+            <div>
+                <label for="">Username</label>
+                <input type="text" v-model="username" />
+            </div>
+
+            <div>
+                <label for="">Password</label>
+                <input type="password" v-model="password" />
+            </div>
+
+            <div>
+                <p v-html="errorString"></p>
+                <button @click="checkUserData">Login</button>
+            </div>
+        </div>
+
+        <script src="../node_modules/vue/dist/vue.min.js"></script>
+        <script>
+            new Vue({
+                el: "#app",
+
+                data: () => ({
+                    username: "",
+                    password: "",
+                    errorString: "",
+                }),
+
+                methods: {
+                    /**
+                     * Check user data4
+                     */
+                    checkUserData() {
+                        this.errorString = "";
+
+                        if (0 == this.username.length) {
+                            this.errorString += "Invalid username<br/>";
+                        }
+
+                        if (0 == this.password.length) {
+                            this.errorString += "Invalid password<br/>";
+                        }
+
+                        if (this.errorString.length == 0) {
+                            alert("Login successfully");
+                        }
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
