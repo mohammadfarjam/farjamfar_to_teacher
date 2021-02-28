@@ -1,69 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="shrink-to-fit=no ,width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>ورود کاربران</title>
 
-        <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
-        <link rel="stylesheet" href="../public/css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-            crossorigin="anonymous"
-        />
-    </head>
-    <body>
-        <div id="app">
-            <section class="side">
-                <img src="../public/image/img.svg" />
-            </section>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="shrink-to-fit=no ,width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ورود کاربران</title>
 
-            <section class="main">
-                <div class="login-container">
-                    <!--            <div>-->
-                    <!--                <p v-html="error"></p>-->
-                    <!--            </div>-->
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
 
-                    <h1 class="title">ورود کاربران</h1>
-                    <div class="separator"></div>
+<body>
+    <div id="app">
+        <section class="side">
+            <img src="../public/image/img.svg" />
+        </section>
 
-                    <form action="" class="login-form">
-                        <div class="form-control">
-                            <input
-                                type="text"
-                                placeholder="نام کاربری / ایمیل "
-                                v-model="user_name"
-                            />
-                            <i class="fas fa-user"></i>
+        <section class="main">
+            <div class="login-container">
 
-                            <div>{{ errors.username }}</div>
-                        </div>
+                <h1 class="title">ورود کاربران</h1>
+                <div class="separator"></div>
 
-                        <div class="form-control">
-                            <input
-                                type="password"
-                                placeholder="رمز عبور "
-                                v-model="password"
-                            />
-                            <i class="fas fa-lock"></i>
+                <form action="" class="login-form">
+                    <div class="form-control">
+                        <input type="text" placeholder="نام کاربری / ایمیل " v-model="user_name" />
+                        <i class="fas fa-user"></i>
 
-                            <div>{{ errors.password }}</div>
-                        </div>
-                        <button class="submit" @click="checkUserData">
+                        <div class="error">{{ errors.username }}</div>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="password" placeholder="رمز عبور " v-model="password" />
+                        <i class="fas fa-lock"></i>
+
+                        <div class="error">{{ errors.password }}</div>
+                        <div class="error">{{ errors.password_length }}</div>
+                    </div>
+                    <button class="submit" @click="checkUserData">
                             ورود
                         </button>
-                    </form>
-                </div>
-            </section>
-        </div>
+                </form>
+            </div>
+        </section>
+    </div>
 
-        <script src="../node_modules/vue/dist/vue.min.js"></script>
-        <script src="../scripts/login.js"></script>
-    </body>
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../scripts/login.js"></script>
+</body>
+
 </html>

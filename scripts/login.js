@@ -4,6 +4,7 @@ new Vue({
     data: () => ({
         user_name: "",
         password: "",
+        // password_length: "",
         errors: {},
     }),
 
@@ -13,21 +14,25 @@ new Vue({
 
             if (!this.user_name) {
                 Vue.set(
-                    this.errors,
-                    "username",
-                    "نام کاربری خود را وارد نمایید"
+                    this.errors, "username", "نام کاربری خود را وارد نمایید"
                 );
             }
 
             if (!this.password) {
-                // this.error += '<br/>رمز عبور خود را وارد نمایید';
-                Vue.set(this.errors, "password", "رمز عبور خود را وارد نمایید");
+                Vue.set(
+                    this.errors, "password", "رمز عبور خود را وارد نمایید"
+                );
             }
 
-            if (!this.errors.username && !this.errors.password) {
+            if (this.password.length < 8) {
+                Vue.set(
+                    this.errors, "password_length", "رمز عبور باید بیش از 8 کاراکتر باشد"
+                );
+            }
+
+            if (!this.errors.username && !this.errors.password && !this.errors.password_length) {
                 alert("خوش آمدید");
             }
-            console.log(this.errors);
 
             e.preventDefault();
         },
