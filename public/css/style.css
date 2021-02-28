@@ -54,13 +54,7 @@ section.side {
     font-weight: bold;
     text-align: center;
     letter-spacing: 1px;
-}
-
-.separator {
-    width: 150px;
-    height: 4px;
-    background-color: #843bc7;
-    margin: 24px;
+    margin-bottom: 50px;
 }
 
 .login-form {
